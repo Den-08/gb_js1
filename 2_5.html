@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+       function plus(a, b) {
+            console.log(`${a} + ${b} = ${a + b}`);
+            return a + b;
+       };
+       function minus(a, b) {
+            console.log(`${a} - ${b} = ${a - b}`);
+            return a - b;
+       };
+       function delit(a, b) {
+            console.log(`${a} / ${b} = ${a / b}`);
+            return a / b;
+       };
+       function umnoj(a, b) {
+            console.log(`${a} * ${b} = ${a * b}`);
+            return a * b;
+       };
+     
+       /*
+        5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+        где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+        переданного значения операции (использовать switch) выполнить одну из арифметических операций
+        (использовать функции из задания 4) и вернуть полученное значение.
+       */
+       function mathOperation(arg1, arg2, operation) {
+          let result;
+          switch(operation) {
+                    case 'plus':  // if (operation === 'plus')
+                         result = plus(arg1, arg2);
+                         break;
+                    case 'minus':  // if (operation === 'minus')
+                         result = minus(arg1, arg2);
+                         break;                    
+                    case 'delit':  // if (operation === 'delit')
+                         result = delit(arg1, arg2);
+                         break;                    
+                    case 'umnoj':  // if (operation === 'umnoj')
+                         result = umnoj(arg1, arg2);
+                         break;                    
+               }
+          return result
+       };
+
+       mathOperation(4, 1, 'plus');
+       mathOperation(9, 3, 'minus');
+       mathOperation(6, 2, 'delit');
+       mathOperation(2, 3, 'umnoj');
+       
+    </script>
+</body>
+</html>
