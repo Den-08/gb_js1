@@ -46,7 +46,9 @@
                          break;                    
                     case 'umnoj':  // if (operation === 'umnoj')
                          result = umnoj(arg1, arg2);
-                         break;                    
+                         break;
+                    default:
+                         throw new Error('Не верная операция');                  
                }
           return result
        };
@@ -55,6 +57,7 @@
        mathOperation(9, 3, 'minus');
        mathOperation(6, 2, 'delit');
        mathOperation(2, 3, 'umnoj');
+       //mathOperation(2, 3, 'www');
        
     </script>
 </body>
