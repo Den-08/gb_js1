@@ -16,7 +16,10 @@
     -->
 
     <script>
-
+        let pastStr = document.createElement('h3');
+            pastStr.innerText = 'hello world';
+        let divToPast = document.getElementsByTagName('div')[0].appendChild(pastStr);
+        console.log(divToPast);
     </script>
 </body>
 </html>
