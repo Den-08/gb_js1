@@ -46,19 +46,30 @@
         rec1.makeTextHighlighted();
         console.log(rec1);
 
-        // es6 
-        // class ProductES6 {
-        //     constructor(name, price) {
-        //         this.name = name;
-        //         this.price = price;
-        //     }
-        //     make25PercentDiscount() {
-        //         this.price *= 0.85;
-        //     }
-        // }
-        // prod2 = new ProductES6('Samsung', 50000);
-        // prod2.make25PercentDiscount();
-        // console.log(prod2.price);
+        //es6
+        class Post_ES6 {
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            edit(text) {
+                this.text = text;
+            }
+        }
+        class AttachedPost_ES6 extends Post_ES6 {   // наследование через extends
+            constructor(author, text, date) {
+                super(author, text, date);    // инициализация super в параметрах не надо this 
+                this.highlighted = false;
+            }
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+        rec2 = new AttachedPost_ES6('автор', 'текст1', Date.now());
+        rec2.edit('текст2_ES6');
+        rec2.makeTextHighlighted();
+        console.log(rec2);
     </script>
 </body>
 
