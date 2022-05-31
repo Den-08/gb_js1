@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    1.1 (это обязательное задание) Сделайте в стиле es5, а затем в стиле es6 
+    (по аналогии из дополнительных видео -> 3 примеры наследования -> типы на es5 и es6),
+    конструктор Product, который принимает параметры name и price, сохраните их как
+    свойства объекта. Также объекты типа Product должны иметь метод make25PercentDiscount,
+    который будет уменьшать цену в объекте на 25%. Имейте в виду, что метод make25PercentDiscount
+    не должен быть внутри функции-конструктора, и также не нужно создавать отдельный объект-прототип
+    (как объект transport в уроке).
+-->
+
+<body>
+    <script>
+        // es5
+        function ProductES5(name, price) {                             // функция конструктор объекта
+            this.name = name;
+            this.price = price;
+        }
+        ProductES5.prototype.make25PercentDiscount = function () {     // метод объекта записываем в прототип
+            this.price *= 0.85;
+        }
+        prod1 = new ProductES5('Apple', 100000);                        // создаем новый объект с помощью конструктора
+        prod1.make25PercentDiscount();                                  // вызываем встроенный метод
+        console.log(prod1.price);                                       // проверяем работу метода
+
+        // es6 
+        class ProductES6 {                                              // задаем класс
+            constructor(name, price) {                                  // конструктор
+                this.name = name;
+                this.price = price;
+            }
+            make25PercentDiscount() {                                   // метод
+                this.price *= 0.85;
+            }
+        }
+        prod2 = new ProductES6('Samsung', 50000);                        // создаем новый объект с помощью конструктора
+        prod2.make25PercentDiscount();                                  // вызываем встроенный метод
+        console.log(prod2.price);                                       // проверяем работу метода
+    </script>
+</body>
+
+</html>
