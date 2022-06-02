@@ -12,7 +12,8 @@
     появлялось сообщение: "вы навели на textarea" -->
 
     <script>
-        
+        let elem = document.getElementsByTagName('textarea');
+        elem[0].addEventListener('mouseover', (event) => {console.log('вы навели на textarea')});
     </script>
 </body>
 </html>
