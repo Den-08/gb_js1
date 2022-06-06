@@ -54,14 +54,16 @@
         let starColl = document.querySelectorAll('.fa-star');
         starColl.forEach((elem) => {
             elem.addEventListener('mouseover', (event) => {
+                // описание функции при наведении курсора на звезду
                 elemLight = (element) => {
                     if (!element.classList.contains(goldenClass)) {
                         element.classList.add(goldenClass)
                     };
-                    if (element.previousElementSibling !== null) {
-                        elemLight(element.previousElementSibling)
+                    if (element.previousElementSibling !== null) { // условие для рекурсии
+                        elemLight(element.previousElementSibling)  // рекурсия
                     }
                 };
+                // вызов функции
                 elemLight(event.target);
             });
             elem.addEventListener('mouseout', () => {
