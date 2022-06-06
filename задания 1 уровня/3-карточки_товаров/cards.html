@@ -44,7 +44,15 @@
     -->
 
     <script>
-
+        let coll = document.querySelectorAll('.product');
+        coll.forEach((product) => {
+            product.style.backgroundColor = 'lightblue';
+        });
+        let coll2 = document.querySelectorAll('.productName');
+        console.log(coll2);
+        coll2.forEach((name) => {
+            name.style.fontSize = '24px';
+        })
     </script>
 </body>
 </html>
