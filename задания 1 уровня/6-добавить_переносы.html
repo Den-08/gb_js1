@@ -20,7 +20,8 @@
     -->
 
     <script>
-        
+        document.querySelectorAll('input').forEach((input) => {input.insertAdjacentHTML('afterend', '<br>')})
+        // document.querySelectorAll('input').forEach((input) => {input.insertAdjacentElement('afterend', document.createElement('br'))})
     </script>
 </body>
 </html>
