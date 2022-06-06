@@ -17,7 +17,12 @@
     padding. -->
 
     <script>
-        
+        let coll = document.getElementsByTagName('div');
+        for (let key in coll) {
+            if (key <= coll.length) {
+                coll[key].style.padding = '10px';
+            }                                    
+        }
     </script>
 </body>
 </html>
