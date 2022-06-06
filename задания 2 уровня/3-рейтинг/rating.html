@@ -39,15 +39,41 @@
 
         let goldenClass = 'golden';
 
-        firstStar.addEventListener('mouseover', function() {
-            if (!firstStar.classList.contains(goldenClass)) {
-                firstStar.classList.add(goldenClass);
-            }
-        });
+        // firstStar.addEventListener('mouseover', function() {
+        //     if (!firstStar.classList.contains(goldenClass)) {
+        //         firstStar.classList.add(goldenClass);
+        //     }
+        // });
 
-        firstStar.addEventListener('mouseout', function() {
-            firstStar.classList.remove(goldenClass);
-        });
+        // firstStar.addEventListener('mouseout', function() {
+        //     firstStar.classList.remove(goldenClass);
+        // });
+
+        //.previousElementSibling
+
+        let starColl = document.querySelectorAll('.fa-star');
+        starColl.forEach((elem) => {
+            elem.addEventListener('mouseover', (event) => {
+                elemLight = (element) => {
+                    if (!element.classList.contains(goldenClass)) {
+                        element.classList.add(goldenClass)
+                    };
+                    if (element.previousElementSibling !== null) {
+                        elemLight(element.previousElementSibling)
+                    }
+                };
+                elemLight(event.target);
+            });
+            elem.addEventListener('mouseout', () => {
+                elemDark = (element) => {
+                    element.classList.remove(goldenClass);
+                    if (element.previousElementSibling !== null) {
+                        elemDark(element.previousElementSibling)
+                    }
+                };
+                elemDark(event.target);
+            })                       
+        })
     </script>
 </body>
 </html>
