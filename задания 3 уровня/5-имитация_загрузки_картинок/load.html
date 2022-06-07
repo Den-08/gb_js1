@@ -41,7 +41,13 @@
     -->
 
     <script>
-        
+        function imgReplace() {
+            let collImg = document.querySelectorAll('img');
+            for (let i = 0; i <= collImg.length; i++) {
+                collImg[i].setAttribute('src', `images/${i + 1}.jpg`)
+            }
+        };
+        setTimeout(imgReplace, 3000)
     </script>
 </body>
 </html>
