@@ -41,11 +41,15 @@
     -->
 
     <script>
-        
-		
-		function buttonClickHandler(event) {
-		
-		}
+	let collBut = document.querySelectorAll('button');
+        collBut.forEach((button) => {
+            button.addEventListener('click', buttonClickHandler)
+        });
+	
+	function buttonClickHandler(event) {
+            event.target.parentNode.style.background = 'lightgreen';  // parentNode или parentElement
+            event.target.innerText = 'Добавлено'
+	}
     </script>
 </body>
 </html>
