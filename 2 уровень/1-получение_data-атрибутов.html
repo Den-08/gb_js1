@@ -20,7 +20,10 @@
     -->
 
     <script>
-        
+        let coll = document.querySelectorAll('button');
+        coll.forEach((el) => {
+            el.addEventListener('click', () => {console.log(el.dataset)})
+        })
     </script>
 </body>
 </html>
